@@ -8,9 +8,11 @@ namespace RPSLS
 {
     class Computer : Player
     {
-        public override void ChooseGesture()
+        public override int ChooseGesture()
         {
-            
+           int result = RandomGesture();
+           
+            return result;
         }
     }
 }

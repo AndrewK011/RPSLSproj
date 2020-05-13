@@ -11,6 +11,7 @@ namespace RPSLS
         public void Intro()
         {
             Console.WriteLine("Welcome to Rock Paper Scissors Lizard Spock! \n\n Enter number of human players (0/1/2): ");
+            ChooseGameMode();
         }
 
         public void ChooseGameMode()
@@ -47,21 +48,21 @@ namespace RPSLS
 
         public void CompareGestures()
         {
-
+            
         }
 
         public void CreatePlayerCharacters(int humanPlayer)
         {
             if(humanPlayer == 0)
             {
-                Player playerOne = new Computer();
-                Player playerTwo = new Computer();
+                 Player playerOne = new Computer();
+                 Player playerTwo = new Computer();
             }
 
             else if(humanPlayer == 1)
             {
-                Player playerOne = new Human();
-                Player playerTwo = new Computer();
+                 Player playerOne = new Human();
+                 Player playerTwo = new Computer();
 
             }
             else

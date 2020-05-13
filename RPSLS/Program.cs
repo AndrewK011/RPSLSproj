@@ -12,7 +12,8 @@ namespace RPSLS
         {
             PlayGame start = new PlayGame();
             start.Intro();
-            start.ChooseGameMode();
+            
+            
         }
     }
 }
