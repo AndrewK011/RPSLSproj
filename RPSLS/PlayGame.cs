@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,7 +17,6 @@ namespace RPSLS
             
             Console.WriteLine("Welcome to Rock Paper Scissors Lizard Spock! \n\nEnter number of human players (0/1/2): ");
             ChooseGameMode();
-            CompareGestures(playerOne,playerTwo);
         }
 
         public void ChooseGameMode()
@@ -49,6 +49,37 @@ namespace RPSLS
                 Console.WriteLine("Incorrect input. Enter number of human players (0/1/2):");
                 ChooseGameMode();
             }         
+        }
+
+        public void BeginGame()
+        {
+            int playerOneScore = 0;
+            int playerTwoScore = 0;
+            int roundLimit = 3;
+            bool gameOver = false;
+
+
+
+            while(!gameOver)
+            {
+                CompareGestures(playerOne, playerTwo);
+                if(playerOneScore == (roundLimit / 2 + 1))
+                {
+                    Console.WriteLine("\nPlayer One is the winner!");
+                    Console.WriteLine($"Player One: {playerOneScore} round wins\n Player Two: {playerTwoScore} round wins");
+                    gameOver = true;
+                }
+
+                else if (playerOneScore == (roundLimit / 2 + 1))
+                {
+                    Console.WriteLine("\nPlayer Two is the winner!");
+                    Console.WriteLine($"Player One: {playerOneScore} round wins\n Player Two: {playerTwoScore} round wins");
+                    gameOver = true;
+                }
+
+            }
+
+
         }
 
         
