@@ -28,7 +28,16 @@ namespace RPSLS
 
             if(int.TryParse(Console.ReadLine(), out userInput))
             {
-                chosenGesture = gestureList[userInput];
+                if(userInput < 0 || userInput >= gestureList.Count)
+                {
+                    Console.WriteLine("Incorrect input, picking random gesture.\n");
+                    chosenGesture = gestureList[RandomGesture()];
+                }
+                else
+                {
+                    chosenGesture = gestureList[userInput];
+
+                }
             }
             else
             {
