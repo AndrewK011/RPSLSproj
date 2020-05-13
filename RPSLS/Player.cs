@@ -8,15 +8,16 @@ namespace RPSLS
 {
     public abstract class Player
     {
-        //List<Gesture> gestureList = new List<Gesture>();
+        
         public string chosenGesture;
         public List<string> gestureList = new List<string> {"rock","paper","scissors","lizard","Spock" };
-        
-        
+
+
 
         public int RandomGesture()
         {
             Random num = new Random();
+            System.Threading.Thread.Sleep(500);
             int randomResult = num.Next(0, 5);
             return randomResult;
         }

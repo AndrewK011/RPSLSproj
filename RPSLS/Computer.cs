@@ -13,6 +13,13 @@ namespace RPSLS
             
             
         }
+        //public int RandomGesture()
+        //{
+        //    System.Threading.Thread.Sleep(1000);
+        //    Random rng = new Random();
+        //    int randomResult = rng.Next(0, 5);
+        //    return randomResult;
+        //}
         public override void ChooseGesture()
         {
            int result = RandomGesture();

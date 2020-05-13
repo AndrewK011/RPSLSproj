@@ -68,11 +68,11 @@ namespace RPSLS
             {
                 Console.WriteLine("Player One's Turn...\n");
                 playerOne.ChooseGesture();
-               // System.Threading.Thread.Sleep(1000);
+              
 
                 Console.WriteLine("Player Two's Turn...\n");
                 playerTwo.ChooseGesture();
-                //System.Threading.Thread.Sleep(300);
+                
 
                 CompareGestures(playerOne, playerTwo);
                 if(playerOneScore == (roundLimit / 2 + 1))
@@ -129,10 +129,10 @@ namespace RPSLS
             switch (userInput)
             {
                 case "y":
-                    roundLimit = 0;
+                    
                     playerOneScore = 0;
                     playerTwoScore = 0;
-                    BeginGame();
+                    Intro();
                     break;
                 case "n":
                     Console.WriteLine("\n\nBye!");
