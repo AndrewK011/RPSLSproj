@@ -21,7 +21,7 @@ namespace RPSLS
             return randomResult;
         }
 
-        public abstract int ChooseGesture();
+        public abstract void ChooseGesture();
 
     }
 }

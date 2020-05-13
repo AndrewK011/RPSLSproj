@@ -65,6 +65,8 @@ namespace RPSLS
 
             while(!gameOver)
             {
+                playerOne.ChooseGesture();
+                playerTwo.ChooseGesture();
                 CompareGestures(playerOne, playerTwo);
                 if(playerOneScore == (roundLimit / 2 + 1))
                 {
@@ -105,6 +107,7 @@ namespace RPSLS
                         playerTwoScore++;
                     }
                     break;
+
                 case "paper":
                     if (playerTwo.chosenGesture == "rock" || playerTwo.chosenGesture == "Spock")
                     {
@@ -119,6 +122,7 @@ namespace RPSLS
                         playerTwoScore++;
                     }
                     break;
+
                 case "scissors":
                     if (playerTwo.chosenGesture == "paper" || playerTwo.chosenGesture == "lizard")
                     {
@@ -133,6 +137,7 @@ namespace RPSLS
                         playerTwoScore++;
                     }
                     break;
+
                 case "lizard":
                     if (playerTwo.chosenGesture == "Spock" || playerTwo.chosenGesture == "paper")
                     {
@@ -147,6 +152,7 @@ namespace RPSLS
                         playerTwoScore++;
                     }
                     break;
+
                 case "Spock":
                     if (playerTwo.chosenGesture == "rock" || playerTwo.chosenGesture == "scissors")
                     {
@@ -161,6 +167,7 @@ namespace RPSLS
                         playerTwoScore++;
                     }
                     break;
+
                 default:
                     break;
                     

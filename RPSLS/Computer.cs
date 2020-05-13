@@ -11,13 +11,14 @@ namespace RPSLS
         public Computer()
         {
             
-            chosenGesture = gestureList[ChooseGesture()];
+            
         }
-        public override int ChooseGesture()
+        public override void ChooseGesture()
         {
            int result = RandomGesture();
-           
-            return result;
+
+            chosenGesture = gestureList[result];
+            
         }
     }
 }

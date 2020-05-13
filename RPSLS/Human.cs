@@ -12,9 +12,9 @@ namespace RPSLS
         public Human()
         {
             
-            chosenGesture = gestureList[ChooseGesture()];
+            
         }
-        public override int ChooseGesture()
+        public override void ChooseGesture()
         {
             Console.WriteLine("Choose a Gesture: ");
 
@@ -28,12 +28,12 @@ namespace RPSLS
 
             if(int.TryParse(Console.ReadLine(), out userInput))
             {
-                return userInput;
+                chosenGesture = gestureList[userInput];
             }
             else
             {
                 Console.WriteLine("Incorrect input, picking random gesture.\n");
-                return RandomGesture();
+                chosenGesture = gestureList[RandomGesture()];
             }
         }
     }
