@@ -67,9 +67,11 @@ namespace RPSLS
             while(!gameOver)
             {
                 Console.WriteLine("Player One's Turn...\n");
+                
                 playerOne.ChooseGesture();
-              
 
+
+                
                 Console.WriteLine("Player Two's Turn...\n");
                 playerTwo.ChooseGesture();
                 
