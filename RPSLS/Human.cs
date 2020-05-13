@@ -8,6 +8,12 @@ namespace RPSLS
 {
     class Human : Player
     {
+
+        public Human()
+        {
+            
+            chosenGesture = gestureList[ChooseGesture()];
+        }
         public override int ChooseGesture()
         {
             Console.WriteLine("Choose a Gesture: ");

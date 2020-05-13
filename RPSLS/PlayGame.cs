@@ -8,10 +8,15 @@ namespace RPSLS
 {
     class PlayGame
     {
+        public Player playerOne;
+        public Player playerTwo;
+
         public void Intro()
         {
-            Console.WriteLine("Welcome to Rock Paper Scissors Lizard Spock! \n\n Enter number of human players (0/1/2): ");
+            
+            Console.WriteLine("Welcome to Rock Paper Scissors Lizard Spock! \n\nEnter number of human players (0/1/2): ");
             ChooseGameMode();
+            CompareGestures(playerOne,playerTwo);
         }
 
         public void ChooseGameMode()
@@ -46,31 +51,38 @@ namespace RPSLS
             }         
         }
 
-        public void CompareGestures()
+        
+
+        public void CompareGestures(Player playerOne, Player playerTwo)
         {
             
         }
 
-        public void CreatePlayerCharacters(int humanPlayer)
+        public (Player, Player) CreatePlayerCharacters(int humanPlayer)
         {
             if(humanPlayer == 0)
             {
-                 Player playerOne = new Computer();
-                 Player playerTwo = new Computer();
+                playerOne = new Computer();
+                playerTwo = new Computer();
+                return (playerOne, playerTwo);
             }
 
             else if(humanPlayer == 1)
             {
-                 Player playerOne = new Human();
-                 Player playerTwo = new Computer();
+                playerOne = new Human();
+                playerTwo = new Computer();
+                return (playerOne, playerTwo);
 
             }
             else
             {
-                Player playerOne = new Human();
-                Player playerTwo = new Human();
+                playerOne = new Human();
+                playerTwo = new Human();
+                return (playerOne, playerTwo);
             }
 
         }
+
+        
     }
 }

@@ -9,18 +9,10 @@ namespace RPSLS
     public abstract class Player
     {
         //List<Gesture> gestureList = new List<Gesture>();
-
-        public List<string> gestureList = new List<string>();
+        public string chosenGesture;
+        public List<string> gestureList = new List<string> {"rock","paper","scissors","lizard","Spock" };
         
-        public void CreateList()
-        {
-            gestureList.Add("rock");
-            gestureList.Add("paper");
-            gestureList.Add("scissors");
-            gestureList.Add("lizard");
-            gestureList.Add("Spock");
-
-        }
+        
 
         public int RandomGesture()
         {
