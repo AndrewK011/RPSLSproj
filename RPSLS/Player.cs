@@ -13,9 +13,7 @@ namespace RPSLS
         
         public int RandomGesture()
         {
-            Random num = new Random();
-            int seedRandom = num.Next(0,int.MaxValue);
-            Random rng = new Random(seedRandom);
+            Random num = new Random();          
             System.Threading.Thread.Sleep(500);
             int randomResult = num.Next(0, 5);
             return randomResult;

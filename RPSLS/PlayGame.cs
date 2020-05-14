@@ -107,11 +107,7 @@ namespace RPSLS
                     Console.WriteLine("Incorrect input.");
                     ContinuePlay();
                     break;
-            }
-
-
-
-            
+            }          
         }
 
         public void PlayAgain()
@@ -161,8 +157,6 @@ namespace RPSLS
             }
             
         }
-
-        
 
         public void CompareGestures(Player playerOne, Player playerTwo)
         {
@@ -246,7 +240,6 @@ namespace RPSLS
                 default:
                     break;
                     
-
             }
         }
 
@@ -272,8 +265,6 @@ namespace RPSLS
             Console.WriteLine($"Both players picked {playerOne.chosenGesture}!\n");
             Console.WriteLine(playerOneScore + " - " + playerTwoScore + "\n");
         }
-
-
 
         public (Player, Player) CreatePlayers(int humanPlayer)
         {
