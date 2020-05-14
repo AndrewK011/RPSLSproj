@@ -13,12 +13,13 @@ namespace RPSLS
         public Player playerTwo;
         public int playerOneScore = 0;
         public int playerTwoScore = 0;
-        int roundLimit;
+        public int roundLimit;
+        public Random num = new Random();
 
         public void Intro()
-        {
-            
+        {           
             Console.WriteLine("Welcome to Rock Paper Scissors Lizard Spock! \n\nEnter number of human players (0/1/2): ");
+
             ChooseGameMode();
             SetRoundLimit();
             BeginGame();
@@ -33,50 +34,45 @@ namespace RPSLS
                 switch(gameModeInput)
                 {
                     case 0:
-                        CreatePlayerCharacters(gameModeInput);
+                        CreatePlayers(gameModeInput);
                         break;
                     case 1:
-                        CreatePlayerCharacters(gameModeInput);
+                        CreatePlayers(gameModeInput);
                         break;
                     case 2:
-                        CreatePlayerCharacters(gameModeInput);
+                        CreatePlayers(gameModeInput);
                         break;
                     default:
                         Console.WriteLine("Incorrect input. Enter number of human players (0/1/2):");
                         ChooseGameMode();
                         break;
-                }
-                    
+                }                  
             }
 
             else
             {
                 Console.WriteLine("Incorrect input. Enter number of human players (0/1/2):");
+
                 ChooseGameMode();
             }         
         }
 
         public void BeginGame()
-        {
-            
-            
+        {                     
             bool gameOver = false;
-
-
 
             while(!gameOver)
             {
                 Console.WriteLine("Player One's Turn...\n");
                 
                 playerOne.ChooseGesture();
-
-
-                
+               
                 Console.WriteLine("Player Two's Turn...\n");
+
                 playerTwo.ChooseGesture();
                 
-
                 CompareGestures(playerOne, playerTwo);
+
                 if(playerOneScore == (roundLimit / 2 + 1))
                 {
                     Console.WriteLine("\nPlayer One is the winner!");
@@ -90,12 +86,8 @@ namespace RPSLS
                     Console.WriteLine($"Player One: {playerOneScore} round wins\nPlayer Two: {playerTwoScore} round wins");
                     gameOver = true;
                 }
-
             }
-
-            ContinuePlay();
-            
-
+            ContinuePlay();           
         }
 
         public void ContinuePlay()
@@ -130,8 +122,7 @@ namespace RPSLS
 
             switch (userInput)
             {
-                case "y":
-                    
+                case "y":                  
                     playerOneScore = 0;
                     playerTwoScore = 0;
                     Intro();
@@ -144,10 +135,6 @@ namespace RPSLS
                     PlayAgain();
                     break;
             }
-
-
-
-
         }
 
         public void SetRoundLimit()
@@ -161,11 +148,13 @@ namespace RPSLS
                     Console.WriteLine("Number must be a positive, odd integer.");
                     SetRoundLimit();
                 }
+
                 else
                 {
                     Console.WriteLine($"We're playing best out of {roundLimit}.");
                 }
             }
+
             else
             {
                 Console.WriteLine("Invalid input.");
@@ -287,7 +276,7 @@ namespace RPSLS
 
 
 
-        public (Player, Player) CreatePlayerCharacters(int humanPlayer)
+        public (Player, Player) CreatePlayers(int humanPlayer)
         {
             if(humanPlayer == 0)
             {
@@ -303,15 +292,13 @@ namespace RPSLS
                 return (playerOne, playerTwo);
 
             }
+
             else
             {
                 playerOne = new Human();
                 playerTwo = new Human();
                 return (playerOne, playerTwo);
             }
-
         }
-
-        
     }
 }

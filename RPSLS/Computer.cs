@@ -9,8 +9,7 @@ namespace RPSLS
     class Computer : Player
     {
         public Computer()
-        {
-            
+        {         
             
         }
        
@@ -18,8 +17,7 @@ namespace RPSLS
         {
            int result = RandomGesture();
 
-            chosenGesture = gestureList[result];
-            
+            chosenGesture = gestureList[result];          
         }
     }
 }

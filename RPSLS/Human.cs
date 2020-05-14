@@ -8,18 +8,15 @@ namespace RPSLS
 {
     class Human : Player
     {
-
         public Human()
         {
-            
-            
+                       
         }
         public override void ChooseGesture()
         {
             Console.WriteLine("Choose a Gesture: ");
 
             int userInput;
-
 
             for (int i = 0; i < gestureList.Count; i++)
             {
@@ -33,12 +30,14 @@ namespace RPSLS
                     Console.WriteLine("Incorrect input, picking random gesture.\n");
                     chosenGesture = gestureList[RandomGesture()];
                 }
+
                 else
                 {
                     chosenGesture = gestureList[userInput];
 
                 }
             }
+
             else
             {
                 Console.WriteLine("Incorrect input, picking random gesture.\n");
