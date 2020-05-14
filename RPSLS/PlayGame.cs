@@ -13,8 +13,7 @@ namespace RPSLS
         public Player playerTwo;
         public int playerOneScore = 0;
         public int playerTwoScore = 0;
-        public int roundLimit;
-        public Random num = new Random();
+        public int roundLimit;     
 
         public void Intro()
         {           
